@@ -1,7 +1,10 @@
 
 package javafxapplication2;
 
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Genom {
     private LinkedList<Long> indeksy;
@@ -45,6 +48,12 @@ public class Genom {
         for(Long indeks: indeksy){
             System.out.print(indeks + " ");
         }
+    }
+    
+    public void mutuj(){
+        int start = ThreadLocalRandom.current().nextInt(0, indeksy.size());
+        int stop = ThreadLocalRandom.current().nextInt(start, indeksy.size());
+        Collections.swap(indeksy,start,stop);
     }
     
 }

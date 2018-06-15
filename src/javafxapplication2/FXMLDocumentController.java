@@ -186,7 +186,16 @@ public class FXMLDocumentController implements Initializable {
         roadChart.getData().addAll(set2);
         }
         if(isGenetic){
-            System.out.println("You choose genetic algorithm!");
+            GenethicAlgorithm genetic = new GenethicAlgorithm(linkedList);
+        ArrayList <Coordinates> list;
+        list = genetic.uruchomAlgorytm();
+        drawLines(list);
+        XYChart.Series set1 = new XYChart.Series<>();
+        set1.getData().add(new XYChart.Data<>("Genetyczny", genetic.getCzas()));
+        timeChart.getData().addAll(set1);
+        XYChart.Series set2 = new XYChart.Series<>();
+        set2.getData().add(new XYChart.Data<>("Genetyczny", genetic.getNajlepszaTrasa()));   
+        roadChart.getData().addAll(set2);
         }
     }
      
