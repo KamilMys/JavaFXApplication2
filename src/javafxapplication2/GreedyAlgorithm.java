@@ -30,10 +30,11 @@ public class GreedyAlgorithm {
     }
     
     public static double countRoad(Coordinates coordinatesFirst, Coordinates coordinatesSecond){
-        return Math.sqrt((coordinatesFirst.getX() - coordinatesSecond.getX())*(coordinatesFirst.getX() - coordinatesSecond.getX()) + (coordinatesFirst.getY() - coordinatesSecond.getY())*(coordinatesFirst.getY() - coordinatesSecond.getY()));      
+        return Math.sqrt((coordinatesFirst.getX() - coordinatesSecond.getX())*(coordinatesFirst.getX() - 
+                coordinatesSecond.getX()) + (coordinatesFirst.getY() - coordinatesSecond.getY())*(coordinatesFirst.getY() - coordinatesSecond.getY()));      
     }
     
-    public double countValue(Coordinates first, Coordinates second){
+    public static double countValue(Coordinates first, Coordinates second){
         return(first.getWartosc()+second.getWartosc())/countRoad(first,second);
     }
     

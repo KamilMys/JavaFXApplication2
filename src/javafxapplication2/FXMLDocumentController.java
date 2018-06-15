@@ -69,10 +69,20 @@ public class FXMLDocumentController implements Initializable {
         x = event.getX()-15;
         y = event.getY()-15;
         gc.fillOval(x,y,30,30);
-        linkedList.addLast(new Coordinates(x,y,value));
+        linkedList.addLast(new Coordinates(x,y,value,getNastepnyNumer()));
        // System.out.println("Coordinate X -> " + x);
        // System.out.println("Coordinate Y -> " + y); 
         
+    }
+    
+    public long getNastepnyNumer(){
+        long numer = -1;
+        for(Coordinates miasto: linkedList){
+            if(miasto.getNumer() > numer){
+                numer = miasto.getNumer();
+            }
+        }
+        return numer+1;
     }
     
     public void drawFromList(LinkedList<Coordinates> lista){

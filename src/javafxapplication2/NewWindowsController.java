@@ -46,7 +46,7 @@ public class NewWindowsController implements Initializable {
             double x = (double)random.nextInt(500);
             double y = (double)random.nextInt(550);
             int wartosc = ThreadLocalRandom.current().nextInt(liczbaOd,liczbaDopoki+1);
-            lista.add(new Coordinates(x,y,wartosc));
+            lista.add(new Coordinates(x,y,wartosc,conn1.getNastepnyNumer()));
         }
         conn1.drawFromList(lista);
         conn1.updateLinkedList(lista);

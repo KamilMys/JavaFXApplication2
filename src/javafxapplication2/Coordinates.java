@@ -5,11 +5,21 @@ public class Coordinates{
     private double x;
     private double y;
     private int wartosc;
+    private long numer;
     
-    public Coordinates(double x, double y, int wartosc){
+    public Coordinates(double x, double y, int wartosc, long numer){
         this.x = x;
         this.y = y;
         this.wartosc = wartosc;
+        this.numer = numer;
+    }
+
+    public long getNumer() {
+        return numer;
+    }
+
+    public void setNumer(long numer) {
+        this.numer = numer;
     }
     
     public double getX(){
